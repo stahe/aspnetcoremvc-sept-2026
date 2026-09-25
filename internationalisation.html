@@ -1,0 +1,1590 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Introduction étape par étape au framework web [ASP.NET Core MVC]">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/aspnetcoremvc-sept-2026/internationalisation.html">
+      
+      
+        <link rel="prev" href="la-vue-et-son-modele.html">
+      
+      
+        <link rel="next" href="portees-des-donnees.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>5. Internationalisation - Introduction étape par étape au framework web [ASP.NET Core MVC]</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "Introduction étape par étape au framework web [ASP.NET Core MVC]";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#5-internationalisation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="Introduction étape par étape au framework web [ASP.NET Core MVC]" class="md-header__button md-logo" aria-label="Introduction étape par étape au framework web [ASP.NET Core MVC]" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Introduction étape par étape au framework web [ASP.NET Core MVC]
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              5. Internationalisation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Passer en mode sombre"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Passer en mode sombre" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Passer en mode clair"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Passer en mode clair" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://stahe.github.io/aspnetcoremvc-sept-2026" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Introduction étape par étape au framework web [ASP.NET Core MVC]" class="md-nav__button md-logo" aria-label="Introduction étape par étape au framework web [ASP.NET Core MVC]" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Introduction étape par étape au framework web [ASP.NET Core MVC]
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://stahe.github.io/aspnetcoremvc-sept-2026" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accueil
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="introduction.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="controleurs-actions-routage.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Contrôleurs, actions, routage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="le-modele-dune-action.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Le modèle d'une action
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="la-vue-et-son-modele.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. La vue et son modèle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Internationalisation
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="internationalisation.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Internationalisation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#51-exemple-22-une-application-en-deux-langues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1. Exemple 22 : une application en deux langues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.1. Exemple 22 : une application en deux langues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#511-les-dictionnaires" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1.1. Les dictionnaires
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#512-le-service-de-traduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1.2. Le service de traduction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#513-traduire-dans-les-vues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1.3. Traduire dans les vues
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#514-le-choix-de-la-langue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1.4. Le choix de la langue
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#515-les-vues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1.5. Les vues
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#516-execution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1.6. Exécution
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="portees-des-donnees.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Portées des données
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="le-cycle-de-vie-dune-requete.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Le cycle de vie d'une requête
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="authentification-et-autorisation.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Authentification et autorisation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="architecture-en-couches-et-acces-aux-donnees.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Architecture en couches et accès aux données
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="conclusion-intermediaire.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Conclusion intermédiaire
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="etude-de-cas--lapplication-rdvmedecins.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Étude de cas : l'application RdvMedecins
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="conclusion.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. Conclusion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="annexes.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Annexes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="5-internationalisation">5. <span style="color: #2e74b5">Internationalisation</span></h1>
+<p>Une application internationalisée affiche ses textes dans la langue de l&#x27;utilisateur. L&#x27;étude de cas est en français et en anglais. Le principe est simple : les vues ne contiennent plus de textes, mais des <strong>clés</strong> (<strong><em>[MENU.ACCUEIL]</em></strong>), et un <strong>dictionnaire</strong> par langue associe à chaque clé son texte. La langue choisie est mémorisée dans un cookie.</p>
+<p><em>[ASP.NET Core]</em> a son propre système de traduction (l&#x27;interface <strong><em>[IStringLocalizer]</em></strong> et des fichiers de ressources <strong><em>[.resx]</em></strong>). Nous utiliserons plutôt des dictionnaires JSON, lus par une petite classe écrite pour l&#x27;occasion : ce sont les mêmes fichiers que ceux de la version <em>[NestJS]</em> de l&#x27;étude de cas, et leur format se lit et s&#x27;écrit sans outil particulier. En revanche, nous confierons à <em>[ASP.NET Core]</em> le choix de la langue de chaque requête : c&#x27;est le rôle de son <strong>middleware de localisation</strong>.</p>
+<h2 id="51-exemple-22-une-application-en-deux-langues">5.1. <span style="color: #2e74b5">Exemple 22 : une application en deux langues</span></h2>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span>
+<span class="normal"><a href="#__codelineno-0-14">14</a></span>
+<span class="normal"><a href="#__codelineno-0-15">15</a></span>
+<span class="normal"><a href="#__codelineno-0-16">16</a></span>
+<span class="normal"><a href="#__codelineno-0-17">17</a></span>
+<span class="normal"><a href="#__codelineno-0-18">18</a></span>
+<span class="normal"><a href="#__codelineno-0-19">19</a></span>
+<span class="normal"><a href="#__codelineno-0-20">20</a></span>
+<span class="normal"><a href="#__codelineno-0-21">21</a></span>
+<span class="normal"><a href="#__codelineno-0-22">22</a></span>
+<span class="normal"><a href="#__codelineno-0-23">23</a></span>
+<span class="normal"><a href="#__codelineno-0-24">24</a></span>
+<span class="normal"><a href="#__codelineno-0-25">25</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>22-i18n/
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>├── Controllers/
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a>│   ├── LangueController.cs
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a>│   └── PagesController.cs
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a>├── i18n/
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a>│   ├── en.json
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a>│   └── fr.json
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a>├── Traduction/
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a>│   ├── PageVue.cs
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a>│   └── Traducteur.cs
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a>├── Views/
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a>│   ├── Pages/
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a>│   │   ├── Accueil.cshtml
+<a id="__codelineno-0-14" name="__codelineno-0-14"></a>│   │   └── Produits.cshtml
+<a id="__codelineno-0-15" name="__codelineno-0-15"></a>│   ├── Shared/
+<a id="__codelineno-0-16" name="__codelineno-0-16"></a>│   │   ├── _Layout.cshtml
+<a id="__codelineno-0-17" name="__codelineno-0-17"></a>│   │   └── _Navbar.cshtml
+<a id="__codelineno-0-18" name="__codelineno-0-18"></a>│   ├── _ViewImports.cshtml
+<a id="__codelineno-0-19" name="__codelineno-0-19"></a>│   └── _ViewStart.cshtml
+<a id="__codelineno-0-20" name="__codelineno-0-20"></a>├── wwwroot/
+<a id="__codelineno-0-21" name="__codelineno-0-21"></a>│   └── css/
+<a id="__codelineno-0-22" name="__codelineno-0-22"></a>│       └── styles.css
+<a id="__codelineno-0-23" name="__codelineno-0-23"></a>├── appsettings.json
+<a id="__codelineno-0-24" name="__codelineno-0-24"></a>├── Exemple22.csproj
+<a id="__codelineno-0-25" name="__codelineno-0-25"></a>└── Program.cs
+</code></pre></div></td></tr></table></div>
+<h3 id="511-les-dictionnaires">5.1.1. <span style="color: #1f4d78">Les dictionnaires</span></h3>
+<p>Le fichier <strong><em>[i18n/fr.json]</em></strong> :</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-1-10">10</a></span>
+<span class="normal"><a href="#__codelineno-1-11">11</a></span>
+<span class="normal"><a href="#__codelineno-1-12">12</a></span>
+<span class="normal"><a href="#__codelineno-1-13">13</a></span>
+<span class="normal"><a href="#__codelineno-1-14">14</a></span>
+<span class="normal"><a href="#__codelineno-1-15">15</a></span>
+<span class="normal"><a href="#__codelineno-1-16">16</a></span>
+<span class="normal"><a href="#__codelineno-1-17">17</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>{
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a>  "MENU": {
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a>    "ACCUEIL": "Accueil",
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a>    "PRODUITS": "Produits"
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a>  },
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a>  "ACCUEIL": {
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a>    "TITRE": "Bienvenue",
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a>    "BONJOUR": "Bonjour {nom} !",
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a>    "DATE": "Nous sommes le {date}."
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a>  },
+<a id="__codelineno-1-11" name="__codelineno-1-11"></a>  "PRODUITS": {
+<a id="__codelineno-1-12" name="__codelineno-1-12"></a>    "TITRE": "Nos produits",
+<a id="__codelineno-1-13" name="__codelineno-1-13"></a>    "NOM": "Produit",
+<a id="__codelineno-1-14" name="__codelineno-1-14"></a>    "PRIX": "Prix",
+<a id="__codelineno-1-15" name="__codelineno-1-15"></a>    "NOMBRE": "{n} produit(s) au catalogue."
+<a id="__codelineno-1-16" name="__codelineno-1-16"></a>  }
+<a id="__codelineno-1-17" name="__codelineno-1-17"></a>}
+</code></pre></div></td></tr></table></div>
+<p>Le fichier <strong><em>[i18n/en.json]</em></strong> :</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span>
+<span class="normal"><a href="#__codelineno-2-12">12</a></span>
+<span class="normal"><a href="#__codelineno-2-13">13</a></span>
+<span class="normal"><a href="#__codelineno-2-14">14</a></span>
+<span class="normal"><a href="#__codelineno-2-15">15</a></span>
+<span class="normal"><a href="#__codelineno-2-16">16</a></span>
+<span class="normal"><a href="#__codelineno-2-17">17</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>{
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a>  "MENU": {
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a>    "ACCUEIL": "Home",
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a>    "PRODUITS": "Products"
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a>  },
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a>  "ACCUEIL": {
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a>    "TITRE": "Welcome",
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a>    "BONJOUR": "Hello {nom}!",
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a>    "DATE": "Today is {date}."
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a>  },
+<a id="__codelineno-2-11" name="__codelineno-2-11"></a>  "PRODUITS": {
+<a id="__codelineno-2-12" name="__codelineno-2-12"></a>    "TITRE": "Our products",
+<a id="__codelineno-2-13" name="__codelineno-2-13"></a>    "NOM": "Product",
+<a id="__codelineno-2-14" name="__codelineno-2-14"></a>    "PRIX": "Price",
+<a id="__codelineno-2-15" name="__codelineno-2-15"></a>    "NOMBRE": "{n} product(s) in the catalogue."
+<a id="__codelineno-2-16" name="__codelineno-2-16"></a>  }
+<a id="__codelineno-2-17" name="__codelineno-2-17"></a>}
+</code></pre></div></td></tr></table></div>
+<ul>
+<li>un dictionnaire est un fichier JSON, organisé par page ou par thème : la clé <strong><em>[ACCUEIL.BONJOUR]</em></strong> désigne le texte <strong><em>[BONJOUR]</em></strong> de la section <strong><em>[ACCUEIL]</em></strong> ;</li>
+<li>ligne 8 : un texte peut contenir des paramètres, entre accolades, remplacés au moment de la traduction. L&#x27;ordre des mots change d&#x27;une langue à l&#x27;autre : c&#x27;est pourquoi on ne fabrique pas un texte en concaténant des morceaux traduits.</li>
+</ul>
+<h3 id="512-le-service-de-traduction">5.1.2. <span style="color: #1f4d78">Le service de traduction</span></h3>
+<p>Le fichier <strong><em>[Traduction/Traducteur.cs]</em></strong> :</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-3-10">10</a></span>
+<span class="normal"><a href="#__codelineno-3-11">11</a></span>
+<span class="normal"><a href="#__codelineno-3-12">12</a></span>
+<span class="normal"><a href="#__codelineno-3-13">13</a></span>
+<span class="normal"><a href="#__codelineno-3-14">14</a></span>
+<span class="normal"><a href="#__codelineno-3-15">15</a></span>
+<span class="normal"><a href="#__codelineno-3-16">16</a></span>
+<span class="normal"><a href="#__codelineno-3-17">17</a></span>
+<span class="normal"><a href="#__codelineno-3-18">18</a></span>
+<span class="normal"><a href="#__codelineno-3-19">19</a></span>
+<span class="normal"><a href="#__codelineno-3-20">20</a></span>
+<span class="normal"><a href="#__codelineno-3-21">21</a></span>
+<span class="normal"><a href="#__codelineno-3-22">22</a></span>
+<span class="normal"><a href="#__codelineno-3-23">23</a></span>
+<span class="normal"><a href="#__codelineno-3-24">24</a></span>
+<span class="normal"><a href="#__codelineno-3-25">25</a></span>
+<span class="normal"><a href="#__codelineno-3-26">26</a></span>
+<span class="normal"><a href="#__codelineno-3-27">27</a></span>
+<span class="normal"><a href="#__codelineno-3-28">28</a></span>
+<span class="normal"><a href="#__codelineno-3-29">29</a></span>
+<span class="normal"><a href="#__codelineno-3-30">30</a></span>
+<span class="normal"><a href="#__codelineno-3-31">31</a></span>
+<span class="normal"><a href="#__codelineno-3-32">32</a></span>
+<span class="normal"><a href="#__codelineno-3-33">33</a></span>
+<span class="normal"><a href="#__codelineno-3-34">34</a></span>
+<span class="normal"><a href="#__codelineno-3-35">35</a></span>
+<span class="normal"><a href="#__codelineno-3-36">36</a></span>
+<span class="normal"><a href="#__codelineno-3-37">37</a></span>
+<span class="normal"><a href="#__codelineno-3-38">38</a></span>
+<span class="normal"><a href="#__codelineno-3-39">39</a></span>
+<span class="normal"><a href="#__codelineno-3-40">40</a></span>
+<span class="normal"><a href="#__codelineno-3-41">41</a></span>
+<span class="normal"><a href="#__codelineno-3-42">42</a></span>
+<span class="normal"><a href="#__codelineno-3-43">43</a></span>
+<span class="normal"><a href="#__codelineno-3-44">44</a></span>
+<span class="normal"><a href="#__codelineno-3-45">45</a></span>
+<span class="normal"><a href="#__codelineno-3-46">46</a></span>
+<span class="normal"><a href="#__codelineno-3-47">47</a></span>
+<span class="normal"><a href="#__codelineno-3-48">48</a></span>
+<span class="normal"><a href="#__codelineno-3-49">49</a></span>
+<span class="normal"><a href="#__codelineno-3-50">50</a></span>
+<span class="normal"><a href="#__codelineno-3-51">51</a></span>
+<span class="normal"><a href="#__codelineno-3-52">52</a></span>
+<span class="normal"><a href="#__codelineno-3-53">53</a></span>
+<span class="normal"><a href="#__codelineno-3-54">54</a></span>
+<span class="normal"><a href="#__codelineno-3-55">55</a></span>
+<span class="normal"><a href="#__codelineno-3-56">56</a></span>
+<span class="normal"><a href="#__codelineno-3-57">57</a></span>
+<span class="normal"><a href="#__codelineno-3-58">58</a></span>
+<span class="normal"><a href="#__codelineno-3-59">59</a></span>
+<span class="normal"><a href="#__codelineno-3-60">60</a></span>
+<span class="normal"><a href="#__codelineno-3-61">61</a></span>
+<span class="normal"><a href="#__codelineno-3-62">62</a></span>
+<span class="normal"><a href="#__codelineno-3-63">63</a></span>
+<span class="normal"><a href="#__codelineno-3-64">64</a></span>
+<span class="normal"><a href="#__codelineno-3-65">65</a></span>
+<span class="normal"><a href="#__codelineno-3-66">66</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="nx">using</span><span class="w"> </span><span class="nx">System</span><span class="p">.</span><span class="nx">Globalization</span><span class="p">;</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="nx">using</span><span class="w"> </span><span class="nx">System</span><span class="p">.</span><span class="nx">Text</span><span class="p">.</span><span class="nx">Json</span><span class="p">;</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="nx">using</span><span class="w"> </span><span class="nx">System</span><span class="p">.</span><span class="nx">Text</span><span class="p">.</span><span class="nx">RegularExpressions</span><span class="p">;</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a>
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="nx">namespace</span><span class="w"> </span><span class="nx">Exemple22</span><span class="p">.</span><span class="nx">Traduction</span><span class="p">;</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="c1">// les dictionnaires, lus UNE fois au démarrage : le service est un singleton</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="k">public</span><span class="w"> </span><span class="nx">partial</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">Traducteur</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="p">{</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="kt">string</span><span class="p">[]</span><span class="w"> </span><span class="nx">Langues</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"fr"</span><span class="p">,</span><span class="w"> </span><span class="s2">"en"</span><span class="p">];</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nx">LangueParDefaut</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"fr"</span><span class="p">;</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12"></a>
+<a id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="w">    </span><span class="c1">// langue -&gt; (clé complète "ACCUEIL.BONJOUR" -&gt; texte)</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14"></a><span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="nx">Dictionary</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">Dictionary</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="nx">dictionnaires</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[];</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15"></a>
+<a id="__codelineno-3-16" name="__codelineno-3-16"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nx">Traducteur</span><span class="p">(</span><span class="nx">IWebHostEnvironment</span><span class="w"> </span><span class="nx">environnement</span><span class="p">)</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18"></a><span class="w">        </span><span class="nx">foreach</span><span class="w"> </span><span class="p">(</span><span class="kd">var</span><span class="w"> </span><span class="nx">langue</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">Langues</span><span class="p">)</span>
+<a id="__codelineno-3-19" name="__codelineno-3-19"></a><span class="w">        </span><span class="p">{</span>
+<a id="__codelineno-3-20" name="__codelineno-3-20"></a><span class="w">            </span><span class="kd">var</span><span class="w"> </span><span class="nx">chemin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Path</span><span class="p">.</span><span class="nx">Combine</span><span class="p">(</span><span class="nx">environnement</span><span class="p">.</span><span class="nx">ContentRootPath</span><span class="p">,</span><span class="w"> </span><span class="s2">"i18n"</span><span class="p">,</span><span class="w"> </span><span class="nx">$</span><span class="s2">"{langue}.json"</span><span class="p">);</span>
+<a id="__codelineno-3-21" name="__codelineno-3-21"></a><span class="w">            </span><span class="nx">using</span><span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="nb">document</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">JsonDocument</span><span class="p">.</span><span class="nx">Parse</span><span class="p">(</span><span class="nx">File</span><span class="p">.</span><span class="nx">ReadAllText</span><span class="p">(</span><span class="nx">chemin</span><span class="p">));</span>
+<a id="__codelineno-3-22" name="__codelineno-3-22"></a><span class="w">            </span><span class="kd">var</span><span class="w"> </span><span class="nx">dictionnaire</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Dictionary</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="o">&gt;</span><span class="p">();</span>
+<a id="__codelineno-3-23" name="__codelineno-3-23"></a><span class="w">            </span><span class="nx">Aplatir</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">RootElement</span><span class="p">,</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w"> </span><span class="nx">dictionnaire</span><span class="p">);</span>
+<a id="__codelineno-3-24" name="__codelineno-3-24"></a><span class="w">            </span><span class="nx">dictionnaires</span><span class="p">[</span><span class="nx">langue</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">dictionnaire</span><span class="p">;</span>
+<a id="__codelineno-3-25" name="__codelineno-3-25"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-3-26" name="__codelineno-3-26"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-3-27" name="__codelineno-3-27"></a>
+<a id="__codelineno-3-28" name="__codelineno-3-28"></a><span class="w">    </span><span class="c1">// la langue de la requête en cours, fixée par le middleware de localisation</span>
+<a id="__codelineno-3-29" name="__codelineno-3-29"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nx">LangueCourante</span><span class="p">()</span>
+<a id="__codelineno-3-30" name="__codelineno-3-30"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-3-31" name="__codelineno-3-31"></a><span class="w">        </span><span class="kd">var</span><span class="w"> </span><span class="nx">langue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">CultureInfo</span><span class="p">.</span><span class="nx">CurrentUICulture</span><span class="p">.</span><span class="nx">TwoLetterISOLanguageName</span><span class="p">;</span>
+<a id="__codelineno-3-32" name="__codelineno-3-32"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">Langues</span><span class="p">.</span><span class="nx">Contains</span><span class="p">(</span><span class="nx">langue</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="nx">langue</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">LangueParDefaut</span><span class="p">;</span>
+<a id="__codelineno-3-33" name="__codelineno-3-33"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-3-34" name="__codelineno-3-34"></a>
+<a id="__codelineno-3-35" name="__codelineno-3-35"></a><span class="w">    </span><span class="c1">// Traduire("ACCUEIL.BONJOUR", { ["nom"] = "Marie" }) -&gt; "Bonjour Marie !"</span>
+<a id="__codelineno-3-36" name="__codelineno-3-36"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nx">Traduire</span><span class="p">(</span><span class="kt">string</span><span class="o">?</span><span class="w"> </span><span class="nx">cle</span><span class="p">,</span><span class="w"> </span><span class="nx">IReadOnlyDictionary</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="o">&gt;?</span><span class="w"> </span><span class="nx">parametres</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span>
+<a id="__codelineno-3-37" name="__codelineno-3-37"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-3-38" name="__codelineno-3-38"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="kt">string</span><span class="p">.</span><span class="nx">IsNullOrEmpty</span><span class="p">(</span><span class="nx">cle</span><span class="p">))</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="s2">""</span><span class="p">;</span>
+<a id="__codelineno-3-39" name="__codelineno-3-39"></a><span class="w">        </span><span class="c1">// une clé absente affiche la clé elle-même : un oubli se voit à l'écran</span>
+<a id="__codelineno-3-40" name="__codelineno-3-40"></a><span class="w">        </span><span class="kd">var</span><span class="w"> </span><span class="nx">texte</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">dictionnaires</span><span class="p">[</span><span class="nx">LangueCourante</span><span class="p">()].</span><span class="nx">GetValueOrDefault</span><span class="p">(</span><span class="nx">cle</span><span class="p">)</span><span class="w"> </span><span class="o">??</span><span class="w"> </span><span class="nx">cle</span><span class="p">;</span>
+<a id="__codelineno-3-41" name="__codelineno-3-41"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">parametres</span><span class="w"> </span><span class="nx">is</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nx">texte</span><span class="p">;</span>
+<a id="__codelineno-3-42" name="__codelineno-3-42"></a><span class="w">        </span><span class="c1">// chaque {nom} est remplacé par la valeur du paramètre de même nom</span>
+<a id="__codelineno-3-43" name="__codelineno-3-43"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">Parametre</span><span class="p">().</span><span class="nx">Replace</span><span class="p">(</span><span class="nx">texte</span><span class="p">,</span><span class="w"> </span><span class="nx">m</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">parametres</span><span class="p">.</span><span class="nx">TryGetValue</span><span class="p">(</span><span class="nx">m</span><span class="p">.</span><span class="nx">Groups</span><span class="p">[</span><span class="mf">1</span><span class="p">].</span><span class="nx">Value</span><span class="p">,</span><span class="w"> </span><span class="nx">out</span><span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="nx">valeur</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="nx">valeur</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">m.Value</span><span class="p">);</span>
+<a id="__codelineno-3-44" name="__codelineno-3-44"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-3-45" name="__codelineno-3-45"></a>
+<a id="__codelineno-3-46" name="__codelineno-3-46"></a><span class="w">    </span><span class="c1">// { "MENU": { "ACCUEIL": "Accueil" } } -&gt; { "MENU.ACCUEIL": "Accueil" }</span>
+<a id="__codelineno-3-47" name="__codelineno-3-47"></a><span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="ow">void</span><span class="w"> </span><span class="nx">Aplatir</span><span class="p">(</span><span class="nx">JsonElement</span><span class="w"> </span><span class="nx">noeud</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nx">prefixe</span><span class="p">,</span><span class="w"> </span><span class="nx">Dictionary</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="o">&gt;</span><span class="w"> </span><span class="nx">resultat</span><span class="p">)</span>
+<a id="__codelineno-3-48" name="__codelineno-3-48"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-3-49" name="__codelineno-3-49"></a><span class="w">        </span><span class="nx">foreach</span><span class="w"> </span><span class="p">(</span><span class="kd">var</span><span class="w"> </span><span class="nx">propriete</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">noeud</span><span class="p">.</span><span class="nx">EnumerateObject</span><span class="p">())</span>
+<a id="__codelineno-3-50" name="__codelineno-3-50"></a><span class="w">        </span><span class="p">{</span>
+<a id="__codelineno-3-51" name="__codelineno-3-51"></a><span class="w">            </span><span class="kd">var</span><span class="w"> </span><span class="nx">cle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">prefixe</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">""</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="nx">propriete.Name</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">$</span><span class="s2">"{prefixe}.{propriete.Name}"</span><span class="p">;</span>
+<a id="__codelineno-3-52" name="__codelineno-3-52"></a><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">propriete</span><span class="p">.</span><span class="nx">Value</span><span class="p">.</span><span class="nx">ValueKind</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nx">JsonValueKind</span><span class="p">.</span><span class="nb">Object</span><span class="p">)</span>
+<a id="__codelineno-3-53" name="__codelineno-3-53"></a><span class="w">            </span><span class="p">{</span>
+<a id="__codelineno-3-54" name="__codelineno-3-54"></a><span class="w">                </span><span class="nx">Aplatir</span><span class="p">(</span><span class="nx">propriete</span><span class="p">.</span><span class="nx">Value</span><span class="p">,</span><span class="w"> </span><span class="nx">cle</span><span class="p">,</span><span class="w"> </span><span class="nx">resultat</span><span class="p">);</span>
+<a id="__codelineno-3-55" name="__codelineno-3-55"></a><span class="w">            </span><span class="p">}</span>
+<a id="__codelineno-3-56" name="__codelineno-3-56"></a><span class="w">            </span><span class="k">else</span>
+<a id="__codelineno-3-57" name="__codelineno-3-57"></a><span class="w">            </span><span class="p">{</span>
+<a id="__codelineno-3-58" name="__codelineno-3-58"></a><span class="w">                </span><span class="nx">resultat</span><span class="p">[</span><span class="nx">cle</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">propriete</span><span class="p">.</span><span class="nx">Value</span><span class="p">.</span><span class="nx">GetString</span><span class="p">()</span><span class="w"> </span><span class="o">??</span><span class="w"> </span><span class="s2">""</span><span class="p">;</span>
+<a id="__codelineno-3-59" name="__codelineno-3-59"></a><span class="w">            </span><span class="p">}</span>
+<a id="__codelineno-3-60" name="__codelineno-3-60"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-3-61" name="__codelineno-3-61"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-3-62" name="__codelineno-3-62"></a>
+<a id="__codelineno-3-63" name="__codelineno-3-63"></a><span class="w">    </span><span class="c1">// l'expression régulière {nom}, compilée par le compilateur C#</span>
+<a id="__codelineno-3-64" name="__codelineno-3-64"></a><span class="w">    </span><span class="p">[</span><span class="nx">GeneratedRegex</span><span class="p">(</span><span class="err">@</span><span class="s2">"\{(\w+)\}"</span><span class="p">)]</span>
+<a id="__codelineno-3-65" name="__codelineno-3-65"></a><span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="nx">partial</span><span class="w"> </span><span class="nx">Regex</span><span class="w"> </span><span class="nx">Parametre</span><span class="p">();</span>
+<a id="__codelineno-3-66" name="__codelineno-3-66"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Commentons ce code :</p>
+<ul>
+<li>ligne 8 : le mot-clé <strong><em>[partial]</em></strong> est exigé par l&#x27;expression régulière de la fin du fichier (cf. plus loin) ;</li>
+<li>lignes 10-11 : les langues gérées, et la langue par défaut ;</li>
+<li>ligne 14 : pour chaque langue, un dictionnaire <em>[C#]</em> qui associe à chaque clé complète (<strong><em>[ACCUEIL.BONJOUR]</em></strong>) son texte ;</li>
+<li>lignes 16-24 : le constructeur lit les fichiers JSON. Le service <strong><em>[IWebHostEnvironment]</em></strong>, fourni par <em>[ASP.NET Core]</em>, donne le dossier du projet (<strong><em>[ContentRootPath]</em></strong>). <strong><em>[JsonDocument.Parse]</em></strong> analyse le texte JSON ; <strong><em>[using var]</em></strong> libère l&#x27;objet à la fin du bloc. Le service sera un singleton (cf. <strong><em>[Program.cs]</em></strong>) : les fichiers sont lus une seule fois ;</li>
+<li>lignes 29-32 : la langue de la requête en cours. Nous verrons que le middleware de localisation la range dans <strong><em>[CultureInfo.CurrentUICulture]</em></strong>. <strong><em>[TwoLetterISOLanguageName]</em></strong> en donne le code sur deux lettres (<strong><em>[fr]</em></strong>, <strong><em>[en]</em></strong>) ;</li>
+<li>lignes 36-43 : la traduction. La clé est cherchée dans le dictionnaire de la langue courante ; absente, c&#x27;est la clé elle-même qui est affichée : un oubli se repère immédiatement à l&#x27;écran. L&#x27;expression régulière trouve chaque paramètre <strong><em>[{nom}]</em></strong> du texte et le remplace par sa valeur ; un paramètre sans valeur est laissé tel quel ;</li>
+<li>lignes 47-58 : la fonction « aplatit » le JSON : l&#x27;objet <strong><em>[&quot;ACCUEIL&quot;: { &quot;BONJOUR&quot;: &quot;...&quot; }]</em></strong> donne la clé <strong><em>[ACCUEIL.BONJOUR]</em></strong>. Elle s&#x27;appelle elle-même (fonction <strong>récursive</strong>) pour descendre dans les objets imbriqués ;</li>
+<li>lignes 64-65 : l&#x27;expression régulière <strong><em>[\{(\w+)\}]</em></strong> (une accolade, un ou plusieurs caractères de mot, capturés, une accolade). L&#x27;attribut <strong><em>[[GeneratedRegex]]</em></strong> demande au compilateur de produire son code d&#x27;analyse une fois pour toutes, à la compilation. La méthode est déclarée <strong><em>[partial]</em></strong> : son corps est écrit par le compilateur.</li>
+</ul>
+<h3 id="513-traduire-dans-les-vues">5.1.3. <span style="color: #1f4d78">Traduire dans les vues</span></h3>
+<p>Une vue pourrait obtenir le service par la directive <strong><em>[@inject Traducteur Traducteur]</em></strong>, puis écrire <strong><em>[@Traducteur.Traduire(&quot;MENU.ACCUEIL&quot;)]</em></strong>. C&#x27;est long, et il faudrait le répéter dans chaque vue. On procède autrement : chaque vue <em>[Razor]</em> est compilée en une classe <em>[C#]</em>, qui dérive par défaut de la classe <strong><em>[RazorPage&lt;TModel&gt;]</em></strong> du framework. On peut intercaler une classe à nous, qui donne à <strong>toutes</strong> les vues les méthodes dont elles ont besoin. Le fichier <strong><em>[Traduction/PageVue.cs]</em></strong> :</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-4-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-4-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-4-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-4-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-4-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-4-10">10</a></span>
+<span class="normal"><a href="#__codelineno-4-11">11</a></span>
+<span class="normal"><a href="#__codelineno-4-12">12</a></span>
+<span class="normal"><a href="#__codelineno-4-13">13</a></span>
+<span class="normal"><a href="#__codelineno-4-14">14</a></span>
+<span class="normal"><a href="#__codelineno-4-15">15</a></span>
+<span class="normal"><a href="#__codelineno-4-16">16</a></span>
+<span class="normal"><a href="#__codelineno-4-17">17</a></span>
+<span class="normal"><a href="#__codelineno-4-18">18</a></span>
+<span class="normal"><a href="#__codelineno-4-19">19</a></span>
+<span class="normal"><a href="#__codelineno-4-20">20</a></span>
+<span class="normal"><a href="#__codelineno-4-21">21</a></span>
+<span class="normal"><a href="#__codelineno-4-22">22</a></span>
+<span class="normal"><a href="#__codelineno-4-23">23</a></span>
+<span class="normal"><a href="#__codelineno-4-24">24</a></span>
+<span class="normal"><a href="#__codelineno-4-25">25</a></span>
+<span class="normal"><a href="#__codelineno-4-26">26</a></span>
+<span class="normal"><a href="#__codelineno-4-27">27</a></span>
+<span class="normal"><a href="#__codelineno-4-28">28</a></span>
+<span class="normal"><a href="#__codelineno-4-29">29</a></span>
+<span class="normal"><a href="#__codelineno-4-30">30</a></span>
+<span class="normal"><a href="#__codelineno-4-31">31</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="k">using</span><span class="w"> </span><span class="nn">System.Globalization</span><span class="p">;</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="k">using</span><span class="w"> </span><span class="nn">Microsoft.AspNetCore.Mvc.Razor</span><span class="p">;</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="k">using</span><span class="w"> </span><span class="nn">Microsoft.AspNetCore.Mvc.Razor.Internal</span><span class="p">;</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a>
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="k">namespace</span><span class="w"> </span><span class="nn">Exemple22.Traduction</span><span class="p">;</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="c1">// la classe mère de toutes les vues (cf. Views/_ViewImports.cshtml : @inherits)</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="k">public</span><span class="w"> </span><span class="k">abstract</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">PageVue</span><span class="o">&lt;</span><span class="n">TModel</span><span class="o">&gt;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">RazorPage</span><span class="o">&lt;</span><span class="n">TModel</span><span class="o">&gt;</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="p">{</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="w">    </span><span class="c1">// rempli par l'injection de dépendances, comme le ferait @inject dans une vue</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="w">    </span><span class="na">[RazorInject]</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">Traducteur</span><span class="w"> </span><span class="n">Traducteur</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="o">!</span><span class="p">;</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13"></a>
+<a id="__codelineno-4-14" name="__codelineno-4-14"></a><span class="w">    </span><span class="c1">// @T("ACCUEIL.BONJOUR", ("nom", "Marie")) : les paramètres sont des couples (nom, valeur)</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nf">T</span><span class="p">(</span><span class="kt">string?</span><span class="w"> </span><span class="n">cle</span><span class="p">,</span><span class="w"> </span><span class="k">params</span><span class="w"> </span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">Nom</span><span class="p">,</span><span class="w"> </span><span class="kt">object?</span><span class="w"> </span><span class="n">Valeur</span><span class="p">)[]</span><span class="w"> </span><span class="n">parametres</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16"></a><span class="w">        </span><span class="n">Traducteur</span><span class="p">.</span><span class="n">Traduire</span><span class="p">(</span><span class="n">cle</span><span class="p">,</span><span class="w"> </span><span class="n">parametres</span><span class="p">.</span><span class="n">ToDictionary</span><span class="p">(</span><span class="n">p</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">Nom</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">Valeur</span><span class="o">?.</span><span class="n">ToString</span><span class="p">()</span><span class="w"> </span><span class="o">??</span><span class="w"> </span><span class="s">""</span><span class="p">));</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17"></a>
+<a id="__codelineno-4-18" name="__codelineno-4-18"></a><span class="w">    </span><span class="c1">// "fr" ou "en"</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Langue</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">Traducteur</span><span class="p">.</span><span class="n">LangueCourante</span><span class="p">();</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20"></a>
+<a id="__codelineno-4-21" name="__codelineno-4-21"></a><span class="w">    </span><span class="c1">// une date en toutes lettres, dans la langue courante</span>
+<a id="__codelineno-4-22" name="__codelineno-4-22"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nf">DateLongue</span><span class="p">(</span><span class="n">DateOnly</span><span class="w"> </span><span class="n">date</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">date</span><span class="p">.</span><span class="n">ToString</span><span class="p">(</span><span class="s">"D"</span><span class="p">,</span><span class="w"> </span><span class="n">CultureInfo</span><span class="p">.</span><span class="n">CurrentCulture</span><span class="p">);</span>
+<a id="__codelineno-4-23" name="__codelineno-4-23"></a>
+<a id="__codelineno-4-24" name="__codelineno-4-24"></a><span class="w">    </span><span class="c1">// un montant en euros, au format de la langue courante</span>
+<a id="__codelineno-4-25" name="__codelineno-4-25"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nf">Monnaie</span><span class="p">(</span><span class="kt">decimal</span><span class="w"> </span><span class="n">montant</span><span class="p">)</span>
+<a id="__codelineno-4-26" name="__codelineno-4-26"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-4-27" name="__codelineno-4-27"></a><span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">format</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">NumberFormatInfo</span><span class="p">)</span><span class="n">CultureInfo</span><span class="p">.</span><span class="n">CurrentCulture</span><span class="p">.</span><span class="n">NumberFormat</span><span class="p">.</span><span class="n">Clone</span><span class="p">();</span>
+<a id="__codelineno-4-28" name="__codelineno-4-28"></a><span class="w">        </span><span class="n">format</span><span class="p">.</span><span class="n">CurrencySymbol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"€"</span><span class="p">;</span>
+<a id="__codelineno-4-29" name="__codelineno-4-29"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">montant</span><span class="p">.</span><span class="n">ToString</span><span class="p">(</span><span class="s">"C"</span><span class="p">,</span><span class="w"> </span><span class="n">format</span><span class="p">);</span>
+<a id="__codelineno-4-30" name="__codelineno-4-30"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-4-31" name="__codelineno-4-31"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Commentons ce code :</p>
+<ul>
+<li>ligne 8 : une classe <strong>générique</strong> : <strong><em>[TModel]</em></strong> est le type du modèle de la vue, différent pour chaque vue. La classe est abstraite : seules les vues en dérivent ;</li>
+<li>lignes 11-12 : l&#x27;attribut <strong><em>[[RazorInject]]</em></strong> demande à <em>[Razor]</em> de remplir la propriété par l&#x27;injection de dépendances : c&#x27;est l&#x27;équivalent de <strong><em>[@inject]</em></strong> pour une classe ;</li>
+<li>lignes 15-16 : la méthode <strong><em>[T]</em></strong> traduit une clé. Ses paramètres sont des <strong>tuples</strong> <strong><em>[(nom, valeur)]</em></strong> : une syntaxe compacte pour écrire des couples de valeurs, <strong><em>[(&quot;nom&quot;, &quot;Marie&quot;)]</em></strong>. Le mot-clé <strong><em>[params]</em></strong> permet d&#x27;en passer autant qu&#x27;on veut, séparés par des virgules. La méthode les range dans un dictionnaire pour le service. Le texte rendu est une chaîne : <em>[Razor]</em> l&#x27;échappera, comme toute expression <strong><em>[@]</em></strong> ;</li>
+<li>ligne 19 : la langue courante, <strong><em>[fr]</em></strong> ou <strong><em>[en]</em></strong> ;</li>
+<li>lignes 22-29 : dates et montants sont formatés selon la <strong>culture</strong> courante, fixée elle aussi par le middleware de localisation (cf. exemple 16).</li>
+</ul>
+<p>Le fichier <strong><em>[Views/_ViewImports.cshtml]</em></strong> :</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
+<span class="normal"><a href="#__codelineno-5-2">2</a></span>
+<span class="normal"><a href="#__codelineno-5-3">3</a></span>
+<span class="normal"><a href="#__codelineno-5-4">4</a></span>
+<span class="normal"><a href="#__codelineno-5-5">5</a></span>
+<span class="normal"><a href="#__codelineno-5-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="n">@addTagHelper</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">Microsoft</span><span class="p">.</span><span class="n">AspNetCore</span><span class="p">.</span><span class="n">Mvc</span><span class="p">.</span><span class="n">TagHelpers</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="n">@using</span><span class="w"> </span><span class="n">Exemple22</span><span class="p">.</span><span class="n">Controllers</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="n">@using</span><span class="w"> </span><span class="n">Exemple22</span><span class="p">.</span><span class="n">Traduction</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="err">@</span><span class="o">*</span><span class="w"> </span><span class="n">toutes</span><span class="w"> </span><span class="n">les</span><span class="w"> </span><span class="n">vues</span><span class="w"> </span><span class="n">dérivent</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">PageVue</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">elles</span><span class="w"> </span><span class="n">disposent</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">T</span><span class="p">(...),</span><span class="w"> </span><span class="n">Langue</span><span class="p">...</span><span class="w"> </span><span class="p">;</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="w">   </span><span class="n">TModel</span><span class="w"> </span><span class="n">désigne</span><span class="w"> </span><span class="n">le</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="n">du</span><span class="w"> </span><span class="n">modèle</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">chaque</span><span class="w"> </span><span class="nf">vue</span><span class="w"> </span><span class="p">(</span><span class="n">@model</span><span class="w"> </span><span class="p">...)</span><span class="w"> </span><span class="o">*</span><span class="err">@</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="n">@inherits</span><span class="w"> </span><span class="n">PageVue</span><span class="o">&lt;</span><span class="n">TModel</span><span class="o">&gt;</span>
+</code></pre></div></td></tr></table></div>
+<ul>
+<li>ligne 6 : la directive <strong><em>[@inherits]</em></strong> désigne la classe mère des vues. Placée dans <strong><em>[_ViewImports.cshtml]</em></strong>, elle vaut pour toutes. Chaque vue peut désormais écrire <strong><em>[@T(&quot;MENU.ACCUEIL&quot;)]</em></strong>.</li>
+</ul>
+<h3 id="514-le-choix-de-la-langue">5.1.4. <span style="color: #1f4d78">Le choix de la langue</span></h3>
+<p>Le fichier <strong><em>[Program.cs]</em></strong> :</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-6-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-6-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-6-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-6-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-6-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-6-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-6-10">10</a></span>
+<span class="normal"><a href="#__codelineno-6-11">11</a></span>
+<span class="normal"><a href="#__codelineno-6-12">12</a></span>
+<span class="normal"><a href="#__codelineno-6-13">13</a></span>
+<span class="normal"><a href="#__codelineno-6-14">14</a></span>
+<span class="normal"><a href="#__codelineno-6-15">15</a></span>
+<span class="normal"><a href="#__codelineno-6-16">16</a></span>
+<span class="normal"><a href="#__codelineno-6-17">17</a></span>
+<span class="normal"><a href="#__codelineno-6-18">18</a></span>
+<span class="normal"><a href="#__codelineno-6-19">19</a></span>
+<span class="normal"><a href="#__codelineno-6-20">20</a></span>
+<span class="normal"><a href="#__codelineno-6-21">21</a></span>
+<span class="normal"><a href="#__codelineno-6-22">22</a></span>
+<span class="normal"><a href="#__codelineno-6-23">23</a></span>
+<span class="normal"><a href="#__codelineno-6-24">24</a></span>
+<span class="normal"><a href="#__codelineno-6-25">25</a></span>
+<span class="normal"><a href="#__codelineno-6-26">26</a></span>
+<span class="normal"><a href="#__codelineno-6-27">27</a></span>
+<span class="normal"><a href="#__codelineno-6-28">28</a></span>
+<span class="normal"><a href="#__codelineno-6-29">29</a></span>
+<span class="normal"><a href="#__codelineno-6-30">30</a></span>
+<span class="normal"><a href="#__codelineno-6-31">31</a></span>
+<span class="normal"><a href="#__codelineno-6-32">32</a></span>
+<span class="normal"><a href="#__codelineno-6-33">33</a></span>
+<span class="normal"><a href="#__codelineno-6-34">34</a></span>
+<span class="normal"><a href="#__codelineno-6-35">35</a></span>
+<span class="normal"><a href="#__codelineno-6-36">36</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="k">using</span><span class="w"> </span><span class="nn">System.Globalization</span><span class="p">;</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="k">using</span><span class="w"> </span><span class="nn">System.Text.Encodings.Web</span><span class="p">;</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="k">using</span><span class="w"> </span><span class="nn">System.Text.Unicode</span><span class="p">;</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="k">using</span><span class="w"> </span><span class="nn">Exemple22.Traduction</span><span class="p">;</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="k">using</span><span class="w"> </span><span class="nn">Microsoft.AspNetCore.Localization</span><span class="p">;</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="k">using</span><span class="w"> </span><span class="nn">Microsoft.Extensions.FileProviders</span><span class="p">;</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7"></a>
+<a id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="kt">var</span><span class="w"> </span><span class="n">builder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">WebApplication</span><span class="p">.</span><span class="n">CreateBuilder</span><span class="p">(</span><span class="n">args</span><span class="p">);</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddControllersWithViews</span><span class="p">();</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10"></a><span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddSingleton</span><span class="p">(</span><span class="n">HtmlEncoder</span><span class="p">.</span><span class="n">Create</span><span class="p">(</span><span class="n">UnicodeRanges</span><span class="p">.</span><span class="n">All</span><span class="p">));</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11"></a><span class="c1">// les dictionnaires : une seule instance, créée au premier besoin</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12"></a><span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddSingleton</span><span class="o">&lt;</span><span class="n">Traducteur</span><span class="o">&gt;</span><span class="p">();</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13"></a>
+<a id="__codelineno-6-14" name="__codelineno-6-14"></a><span class="kt">var</span><span class="w"> </span><span class="n">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">Build</span><span class="p">();</span>
+<a id="__codelineno-6-15" name="__codelineno-6-15"></a>
+<a id="__codelineno-6-16" name="__codelineno-6-16"></a><span class="n">app</span><span class="p">.</span><span class="n">UseStaticFiles</span><span class="p">();</span>
+<a id="__codelineno-6-17" name="__codelineno-6-17"></a><span class="n">app</span><span class="p">.</span><span class="n">UseStaticFiles</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">StaticFileOptions</span>
+<a id="__codelineno-6-18" name="__codelineno-6-18"></a><span class="p">{</span>
+<a id="__codelineno-6-19" name="__codelineno-6-19"></a><span class="w">    </span><span class="n">FileProvider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PhysicalFileProvider</span><span class="p">(</span><span class="n">Path</span><span class="p">.</span><span class="n">GetFullPath</span><span class="p">(</span><span class="n">Path</span><span class="p">.</span><span class="n">Combine</span><span class="p">(</span><span class="n">builder</span><span class="p">.</span><span class="n">Environment</span><span class="p">.</span><span class="n">ContentRootPath</span><span class="p">,</span><span class="w"> </span><span class="s">".."</span><span class="p">,</span><span class="w"> </span><span class="s">"commun"</span><span class="p">,</span><span class="w"> </span><span class="s">"bootstrap"</span><span class="p">))),</span>
+<a id="__codelineno-6-20" name="__codelineno-6-20"></a><span class="w">    </span><span class="n">RequestPath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"/bootstrap"</span><span class="p">,</span>
+<a id="__codelineno-6-21" name="__codelineno-6-21"></a><span class="p">});</span>
+<a id="__codelineno-6-22" name="__codelineno-6-22"></a>
+<a id="__codelineno-6-23" name="__codelineno-6-23"></a><span class="c1">// la langue de chaque requête : celle du cookie, le français sinon</span>
+<a id="__codelineno-6-24" name="__codelineno-6-24"></a><span class="kt">var</span><span class="w"> </span><span class="n">cultures</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Traducteur</span><span class="p">.</span><span class="n">Langues</span><span class="p">.</span><span class="n">Select</span><span class="p">(</span><span class="n">l</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CultureInfo</span><span class="p">(</span><span class="n">l</span><span class="p">)).</span><span class="n">ToList</span><span class="p">();</span>
+<a id="__codelineno-6-25" name="__codelineno-6-25"></a><span class="kt">var</span><span class="w"> </span><span class="n">localisation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">RequestLocalizationOptions</span>
+<a id="__codelineno-6-26" name="__codelineno-6-26"></a><span class="p">{</span>
+<a id="__codelineno-6-27" name="__codelineno-6-27"></a><span class="w">    </span><span class="n">DefaultRequestCulture</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">RequestCulture</span><span class="p">(</span><span class="n">Traducteur</span><span class="p">.</span><span class="n">LangueParDefaut</span><span class="p">),</span>
+<a id="__codelineno-6-28" name="__codelineno-6-28"></a><span class="w">    </span><span class="n">SupportedCultures</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cultures</span><span class="p">,</span><span class="w">   </span><span class="c1">// les langues des formats (dates, nombres)</span>
+<a id="__codelineno-6-29" name="__codelineno-6-29"></a><span class="w">    </span><span class="n">SupportedUICultures</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cultures</span><span class="p">,</span><span class="w"> </span><span class="c1">// les langues des textes</span>
+<a id="__codelineno-6-30" name="__codelineno-6-30"></a><span class="p">};</span>
+<a id="__codelineno-6-31" name="__codelineno-6-31"></a><span class="c1">// seul le cookie décide (ni la langue du navigateur, ni un paramètre d'URL)</span>
+<a id="__codelineno-6-32" name="__codelineno-6-32"></a><span class="n">localisation</span><span class="p">.</span><span class="n">RequestCultureProviders</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="k">new</span><span class="w"> </span><span class="n">CookieRequestCultureProvider</span><span class="p">()];</span>
+<a id="__codelineno-6-33" name="__codelineno-6-33"></a><span class="n">app</span><span class="p">.</span><span class="n">UseRequestLocalization</span><span class="p">(</span><span class="n">localisation</span><span class="p">);</span>
+<a id="__codelineno-6-34" name="__codelineno-6-34"></a>
+<a id="__codelineno-6-35" name="__codelineno-6-35"></a><span class="n">app</span><span class="p">.</span><span class="n">MapControllers</span><span class="p">();</span>
+<a id="__codelineno-6-36" name="__codelineno-6-36"></a><span class="n">app</span><span class="p">.</span><span class="n">Run</span><span class="p">();</span>
+</code></pre></div></td></tr></table></div>
+<p>Commentons ce code :</p>
+<ul>
+<li>ligne 12 : le service de traduction, en un seul exemplaire ;</li>
+<li>lignes 24-29 : la configuration du middleware de localisation. <em>[.NET]</em> distingue deux notions : la <strong>culture</strong> (<strong><em>[CurrentCulture]</em></strong>), qui fixe le format des dates et des nombres, et la <strong>culture de</strong> <strong>l&#x27;interface</strong> (<strong><em>[CurrentUICulture]</em></strong>), qui fixe la langue des textes. Les deux reçoivent ici la même liste de langues ; une langue qui n&#x27;est pas dans la liste est refusée ;</li>
+<li>ligne 32 : où chercher la langue de la requête. Par défaut, le middleware essaie successivement un paramètre de l&#x27;URL (<strong><em>[?culture=en]</em></strong>), un cookie, puis l&#x27;entête <strong><em>[Accept-Language]</em></strong> envoyé par le navigateur (sa langue). On ne garde que le cookie : c&#x27;est l&#x27;utilisateur qui choisit, par les boutons FR / EN ;</li>
+<li>ligne 33 : le middleware est ajouté au pipeline. À chaque requête, il lit le cookie et fixe <strong><em>[CultureInfo.CurrentCulture]</em></strong> et <strong><em>[CultureInfo.CurrentUICulture]</em></strong> pour toute la durée de la requête. Sans cookie, c&#x27;est la langue par défaut : le français.</li>
+</ul>
+<p>Le fichier <strong><em>[Controllers/LangueController.cs]</em></strong> :</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-7-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-7-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-7-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-7-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-7-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-7-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-7-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-7-10">10</a></span>
+<span class="normal"><a href="#__codelineno-7-11">11</a></span>
+<span class="normal"><a href="#__codelineno-7-12">12</a></span>
+<span class="normal"><a href="#__codelineno-7-13">13</a></span>
+<span class="normal"><a href="#__codelineno-7-14">14</a></span>
+<span class="normal"><a href="#__codelineno-7-15">15</a></span>
+<span class="normal"><a href="#__codelineno-7-16">16</a></span>
+<span class="normal"><a href="#__codelineno-7-17">17</a></span>
+<span class="normal"><a href="#__codelineno-7-18">18</a></span>
+<span class="normal"><a href="#__codelineno-7-19">19</a></span>
+<span class="normal"><a href="#__codelineno-7-20">20</a></span>
+<span class="normal"><a href="#__codelineno-7-21">21</a></span>
+<span class="normal"><a href="#__codelineno-7-22">22</a></span>
+<span class="normal"><a href="#__codelineno-7-23">23</a></span>
+<span class="normal"><a href="#__codelineno-7-24">24</a></span>
+<span class="normal"><a href="#__codelineno-7-25">25</a></span>
+<span class="normal"><a href="#__codelineno-7-26">26</a></span>
+<span class="normal"><a href="#__codelineno-7-27">27</a></span>
+<span class="normal"><a href="#__codelineno-7-28">28</a></span>
+<span class="normal"><a href="#__codelineno-7-29">29</a></span>
+<span class="normal"><a href="#__codelineno-7-30">30</a></span>
+<span class="normal"><a href="#__codelineno-7-31">31</a></span>
+<span class="normal"><a href="#__codelineno-7-32">32</a></span>
+<span class="normal"><a href="#__codelineno-7-33">33</a></span>
+<span class="normal"><a href="#__codelineno-7-34">34</a></span>
+<span class="normal"><a href="#__codelineno-7-35">35</a></span>
+<span class="normal"><a href="#__codelineno-7-36">36</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="nx">using</span><span class="w"> </span><span class="nx">Exemple22</span><span class="p">.</span><span class="nx">Traduction</span><span class="p">;</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="nx">using</span><span class="w"> </span><span class="nx">Microsoft</span><span class="p">.</span><span class="nx">AspNetCore</span><span class="p">.</span><span class="nx">Localization</span><span class="p">;</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="nx">using</span><span class="w"> </span><span class="nx">Microsoft</span><span class="p">.</span><span class="nx">AspNetCore</span><span class="p">.</span><span class="nx">Mvc</span><span class="p">;</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4"></a>
+<a id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="nx">namespace</span><span class="w"> </span><span class="nx">Exemple22</span><span class="p">.</span><span class="nx">Controllers</span><span class="p">;</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6"></a>
+<a id="__codelineno-7-7" name="__codelineno-7-7"></a><span class="k">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">LangueController</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">Controller</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8"></a><span class="p">{</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9"></a><span class="w">    </span><span class="c1">// GET /langue/en : mémorise le choix dans un cookie, puis revient à la page précédente</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10"></a><span class="w">    </span><span class="p">[</span><span class="nx">HttpGet</span><span class="p">(</span><span class="s2">"langue/{langue}"</span><span class="p">)]</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nx">IActionResult</span><span class="w"> </span><span class="nx">Changer</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="nx">langue</span><span class="p">)</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">Traducteur</span><span class="p">.</span><span class="nx">Langues</span><span class="p">.</span><span class="nx">Contains</span><span class="p">(</span><span class="nx">langue</span><span class="p">))</span>
+<a id="__codelineno-7-14" name="__codelineno-7-14"></a><span class="w">        </span><span class="p">{</span>
+<a id="__codelineno-7-15" name="__codelineno-7-15"></a><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="nx">NotFound</span><span class="p">();</span>
+<a id="__codelineno-7-16" name="__codelineno-7-16"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-7-17" name="__codelineno-7-17"></a><span class="w">        </span><span class="nx">Response</span><span class="p">.</span><span class="nx">Cookies</span><span class="p">.</span><span class="nx">Append</span><span class="p">(</span>
+<a id="__codelineno-7-18" name="__codelineno-7-18"></a><span class="w">            </span><span class="nx">CookieRequestCultureProvider</span><span class="p">.</span><span class="nx">DefaultCookieName</span><span class="p">,</span><span class="w">                            </span><span class="c1">// le nom du cookie</span>
+<a id="__codelineno-7-19" name="__codelineno-7-19"></a><span class="w">            </span><span class="nx">CookieRequestCultureProvider</span><span class="p">.</span><span class="nx">MakeCookieValue</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nx">RequestCulture</span><span class="p">(</span><span class="nx">langue</span><span class="p">)),</span><span class="w"> </span><span class="c1">// "c=en|uic=en"</span>
+<a id="__codelineno-7-20" name="__codelineno-7-20"></a><span class="w">            </span><span class="ow">new</span><span class="w"> </span><span class="nx">CookieOptions</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">MaxAge</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">TimeSpan</span><span class="p">.</span><span class="nx">FromDays</span><span class="p">(</span><span class="mf">365</span><span class="p">),</span><span class="w"> </span><span class="nx">SameSite</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">SameSiteMode</span><span class="p">.</span><span class="nx">Lax</span><span class="p">,</span><span class="w"> </span><span class="nx">HttpOnly</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-7-21" name="__codelineno-7-21"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">Redirect</span><span class="p">(</span><span class="nx">PageDOrigine</span><span class="p">());</span>
+<a id="__codelineno-7-22" name="__codelineno-7-22"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-7-23" name="__codelineno-7-23"></a>
+<a id="__codelineno-7-24" name="__codelineno-7-24"></a><span class="w">    </span><span class="c1">// la page d'où l'on vient (entête Referer), dont on ne garde que le chemin :</span>
+<a id="__codelineno-7-25" name="__codelineno-7-25"></a><span class="w">    </span><span class="c1">// rediriger vers une adresse complète venue de la requête permettrait</span>
+<a id="__codelineno-7-26" name="__codelineno-7-26"></a><span class="w">    </span><span class="c1">// d'envoyer l'utilisateur sur un autre site (faille "open redirect")</span>
+<a id="__codelineno-7-27" name="__codelineno-7-27"></a><span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nx">PageDOrigine</span><span class="p">()</span>
+<a id="__codelineno-7-28" name="__codelineno-7-28"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-7-29" name="__codelineno-7-29"></a><span class="w">        </span><span class="kd">var</span><span class="w"> </span><span class="nx">referer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Request</span><span class="p">.</span><span class="nx">Headers</span><span class="p">.</span><span class="nx">Referer</span><span class="p">.</span><span class="nx">ToString</span><span class="p">();</span>
+<a id="__codelineno-7-30" name="__codelineno-7-30"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">Uri</span><span class="p">.</span><span class="nx">TryCreate</span><span class="p">(</span><span class="nx">referer</span><span class="p">,</span><span class="w"> </span><span class="nx">UriKind</span><span class="p">.</span><span class="nx">Absolute</span><span class="p">,</span><span class="w"> </span><span class="nx">out</span><span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="nx">url</span><span class="p">))</span>
+<a id="__codelineno-7-31" name="__codelineno-7-31"></a><span class="w">        </span><span class="p">{</span>
+<a id="__codelineno-7-32" name="__codelineno-7-32"></a><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="s2">"/"</span><span class="p">;</span>
+<a id="__codelineno-7-33" name="__codelineno-7-33"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-7-34" name="__codelineno-7-34"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">url</span><span class="p">.</span><span class="nx">PathAndQuery</span><span class="p">;</span>
+<a id="__codelineno-7-35" name="__codelineno-7-35"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-7-36" name="__codelineno-7-36"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Commentons ce code :</p>
+<ul>
+<li>lignes 10-21 : <strong><em>[GET /langue/en]</em></strong> mémorise le choix dans un cookie valable un an, puis redirige vers la page d&#x27;où l&#x27;on vient. Une langue inconnue provoque une 404 ;</li>
+<li>lignes 17-20 : <strong><em>[Response.Cookies.Append(nom, valeur, options)]</em></strong> dépose un cookie : le navigateur le renverra à chaque requête suivante. Le nom et le format de sa valeur sont ceux qu&#x27;attend le middleware de localisation : on les obtient de la classe <strong><em>[CookieRequestCultureProvider]</em></strong>, sans les écrire nous-mêmes. Options : <strong><em>[MaxAge]</em></strong> (durée de vie), <strong><em>[HttpOnly]</em></strong> (le <em>[JavaScript]</em> de la page ne peut pas le lire), <strong><em>[SameSite = Lax]</em></strong> (il n&#x27;est pas envoyé par les requêtes POST venues d&#x27;autres sites) ;</li>
+<li>lignes 27-34 : la page d&#x27;origine est donnée par l&#x27;entête <strong><em>[Referer]</em></strong>, que le navigateur ajoute quand on clique sur un lien. On n&#x27;en garde que le chemin et les paramètres (<strong><em>[PathAndQuery]</em></strong>) : rediriger vers une adresse complète venue de la requête permettrait à un site malveillant de fabriquer un lien qui, après être passé par notre site, envoie l&#x27;utilisateur chez lui (faille dite <em>[open redirect]</em>).</li>
+</ul>
+<h3 id="515-les-vues">5.1.5. <span style="color: #1f4d78">Les vues</span></h3>
+<p>Le fichier <strong><em>[Views/Shared/_Layout.cshtml]</em></strong> :</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-8-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-8-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-8-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-8-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-8-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-8-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-8-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-8-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-8-10">10</a></span>
+<span class="normal"><a href="#__codelineno-8-11">11</a></span>
+<span class="normal"><a href="#__codelineno-8-12">12</a></span>
+<span class="normal"><a href="#__codelineno-8-13">13</a></span>
+<span class="normal"><a href="#__codelineno-8-14">14</a></span>
+<span class="normal"><a href="#__codelineno-8-15">15</a></span>
+<span class="normal"><a href="#__codelineno-8-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="cp">&lt;!doctype html&gt;</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">"@Langue"</span><span class="p">&gt;</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4"></a>  <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">"utf-8"</span><span class="p">&gt;</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5"></a>  @* le titre est une CLÉ, déposée par la vue, traduite par le gabarit *@
+<a id="__codelineno-8-6" name="__codelineno-8-6"></a>  <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>@T(ViewData["Titre"] as string)<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7"></a>  <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">"stylesheet"</span> <span class="na">href</span><span class="o">=</span><span class="s">"/bootstrap/css/bootstrap.min.css"</span><span class="p">&gt;</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8"></a>  <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">"stylesheet"</span> <span class="na">href</span><span class="o">=</span><span class="s">"/css/styles.css"</span><span class="p">&gt;</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9"></a><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10"></a><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11"></a>  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"container py-3"</span><span class="p">&gt;</span>
+<a id="__codelineno-8-12" name="__codelineno-8-12"></a>    <span class="p">&lt;</span><span class="nt">partial</span> <span class="na">name</span><span class="o">=</span><span class="s">"_Navbar"</span> <span class="p">/&gt;</span>
+<a id="__codelineno-8-13" name="__codelineno-8-13"></a>    @RenderBody()
+<a id="__codelineno-8-14" name="__codelineno-8-14"></a>  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a id="__codelineno-8-15" name="__codelineno-8-15"></a><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<a id="__codelineno-8-16" name="__codelineno-8-16"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div></td></tr></table></div>
+<ul>
+<li>ligne 2 : l&#x27;attribut <strong><em>[lang]</em></strong> de la page suit la langue choisie (utile aux lecteurs d&#x27;écran et aux correcteurs orthographiques) ;</li>
+<li>ligne 6 : le titre de la page est une clé, déposée par la vue dans <strong><em>[ViewData]</em></strong>, et traduite par le gabarit. <strong><em>[as string]</em></strong> convertit la valeur (de type <strong><em>[object]</em></strong>) en chaîne, ou en <strong><em>[null]</em></strong> si ce n&#x27;en est pas une.</li>
+</ul>
+<p>Le fichier <strong><em>[Views/Shared/_Navbar.cshtml]</em></strong> :</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-9-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-9-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-9-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-9-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-9-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-9-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-9-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-9-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-9-10">10</a></span>
+<span class="normal"><a href="#__codelineno-9-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="p">&lt;</span><span class="nt">nav</span> <span class="na">class</span><span class="o">=</span><span class="s">"navbar navbar-expand bg-light rounded mb-3 px-3"</span><span class="p">&gt;</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2"></a>  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"navbar-nav me-auto"</span><span class="p">&gt;</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3"></a>    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">"nav-link"</span> <span class="na">href</span><span class="o">=</span><span class="s">"/"</span><span class="p">&gt;</span>@T("MENU.ACCUEIL")<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4"></a>    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">"nav-link"</span> <span class="na">href</span><span class="o">=</span><span class="s">"/produits"</span><span class="p">&gt;</span>@T("MENU.PRODUITS")<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5"></a>  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6"></a>  @* la langue courante est mise en évidence *@
+<a id="__codelineno-9-7" name="__codelineno-9-7"></a>  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"btn-group btn-group-sm"</span><span class="p">&gt;</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8"></a>    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">"btn @(Langue == "</span><span class="na">fr</span><span class="err">"</span> <span class="err">?</span> <span class="err">"</span><span class="na">btn-primary</span><span class="err">"</span> <span class="na">:</span> <span class="err">"</span><span class="na">btn-outline-primary</span><span class="err">")"</span> <span class="na">href</span><span class="o">=</span><span class="s">"/langue/fr"</span><span class="p">&gt;</span>FR<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9"></a>    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">"btn @(Langue == "</span><span class="na">en</span><span class="err">"</span> <span class="err">?</span> <span class="err">"</span><span class="na">btn-primary</span><span class="err">"</span> <span class="na">:</span> <span class="err">"</span><span class="na">btn-outline-primary</span><span class="err">")"</span> <span class="na">href</span><span class="o">=</span><span class="s">"/langue/en"</span><span class="p">&gt;</span>EN<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10"></a>  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11"></a><span class="p">&lt;/</span><span class="nt">nav</span><span class="p">&gt;</span>
+</code></pre></div></td></tr></table></div>
+<ul>
+<li>lignes 8-9 : deux liens (changer de langue ne modifie aucune donnée de l&#x27;application : un GET convient), la langue courante étant mise en évidence.</li>
+</ul>
+<p>Le fichier <strong><em>[Views/Pages/Accueil.cshtml]</em></strong> :</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
+<span class="normal"><a href="#__codelineno-10-2">2</a></span>
+<span class="normal"><a href="#__codelineno-10-3">3</a></span>
+<span class="normal"><a href="#__codelineno-10-4">4</a></span>
+<span class="normal"><a href="#__codelineno-10-5">5</a></span>
+<span class="normal"><a href="#__codelineno-10-6">6</a></span>
+<span class="normal"><a href="#__codelineno-10-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a>@model AccueilModele
+<a id="__codelineno-10-2" name="__codelineno-10-2"></a>@{
+<a id="__codelineno-10-3" name="__codelineno-10-3"></a>    ViewData["Titre"] = "ACCUEIL.TITRE";
+<a id="__codelineno-10-4" name="__codelineno-10-4"></a>}
+<a id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>@T("ACCUEIL.TITRE")<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>@T("ACCUEIL.BONJOUR", ("nom", Model.Nom))<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>@T("ACCUEIL.DATE", ("date", DateLongue(Model.Aujourdhui)))<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</code></pre></div></td></tr></table></div>
+<ul>
+<li>ligne 6 : un paramètre, passé sous forme de tuple ;</li>
+<li>ligne 7 : la date est d&#x27;abord formatée par <strong><em>[DateLongue]</em></strong>, puis passée comme paramètre <strong><em>[date]</em></strong> à <strong><em>[T]</em></strong>.</li>
+</ul>
+<p>Le fichier <strong><em>[Views/Pages/Produits.cshtml]</em></strong> :</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-11-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-11-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-11-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-11-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-11-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-11-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-11-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-11-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-11-10">10</a></span>
+<span class="normal"><a href="#__codelineno-11-11">11</a></span>
+<span class="normal"><a href="#__codelineno-11-12">12</a></span>
+<span class="normal"><a href="#__codelineno-11-13">13</a></span>
+<span class="normal"><a href="#__codelineno-11-14">14</a></span>
+<span class="normal"><a href="#__codelineno-11-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a>@model List<span class="p">&lt;</span><span class="nt">Produit</span><span class="p">&gt;</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2"></a>@{
+<a id="__codelineno-11-3" name="__codelineno-11-3"></a>    ViewData["Titre"] = "PRODUITS.TITRE";
+<a id="__codelineno-11-4" name="__codelineno-11-4"></a>}
+<a id="__codelineno-11-5" name="__codelineno-11-5"></a><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>@T("PRODUITS.TITRE")<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6"></a><span class="p">&lt;</span><span class="nt">table</span> <span class="na">class</span><span class="o">=</span><span class="s">"table table-sm w-auto"</span><span class="p">&gt;</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7"></a>  <span class="p">&lt;</span><span class="nt">thead</span><span class="p">&gt;&lt;</span><span class="nt">tr</span><span class="p">&gt;&lt;</span><span class="nt">th</span><span class="p">&gt;</span>@T("PRODUITS.NOM")<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;&lt;</span><span class="nt">th</span> <span class="na">class</span><span class="o">=</span><span class="s">"text-end"</span><span class="p">&gt;</span>@T("PRODUITS.PRIX")<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;&lt;/</span><span class="nt">tr</span><span class="p">&gt;&lt;/</span><span class="nt">thead</span><span class="p">&gt;</span>
+<a id="__codelineno-11-8" name="__codelineno-11-8"></a>  <span class="p">&lt;</span><span class="nt">tbody</span><span class="p">&gt;</span>
+<a id="__codelineno-11-9" name="__codelineno-11-9"></a>    @foreach (var produit in Model)
+<a id="__codelineno-11-10" name="__codelineno-11-10"></a>    {
+<a id="__codelineno-11-11" name="__codelineno-11-11"></a>      <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>@produit.Nom<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">td</span> <span class="na">class</span><span class="o">=</span><span class="s">"text-end"</span><span class="p">&gt;</span>@Monnaie(produit.Prix)<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a id="__codelineno-11-12" name="__codelineno-11-12"></a>    }
+<a id="__codelineno-11-13" name="__codelineno-11-13"></a>  <span class="p">&lt;/</span><span class="nt">tbody</span><span class="p">&gt;</span>
+<a id="__codelineno-11-14" name="__codelineno-11-14"></a><span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+<a id="__codelineno-11-15" name="__codelineno-11-15"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>@T("PRODUITS.NOMBRE", ("n", Model.Count))<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</code></pre></div></td></tr></table></div>
+<ul>
+<li>ligne 11 : le montant, formaté selon la langue ;</li>
+<li>ligne 15 : un paramètre numérique : <strong><em>[T]</em></strong> le convertit en chaîne.</li>
+</ul>
+<p>Le fichier <strong><em>[Controllers/PagesController.cs]</em></strong> :</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-12-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-12-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-12-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-12-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-12-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-12-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-12-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-12-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-12-10">10</a></span>
+<span class="normal"><a href="#__codelineno-12-11">11</a></span>
+<span class="normal"><a href="#__codelineno-12-12">12</a></span>
+<span class="normal"><a href="#__codelineno-12-13">13</a></span>
+<span class="normal"><a href="#__codelineno-12-14">14</a></span>
+<span class="normal"><a href="#__codelineno-12-15">15</a></span>
+<span class="normal"><a href="#__codelineno-12-16">16</a></span>
+<span class="normal"><a href="#__codelineno-12-17">17</a></span>
+<span class="normal"><a href="#__codelineno-12-18">18</a></span>
+<span class="normal"><a href="#__codelineno-12-19">19</a></span>
+<span class="normal"><a href="#__codelineno-12-20">20</a></span>
+<span class="normal"><a href="#__codelineno-12-21">21</a></span>
+<span class="normal"><a href="#__codelineno-12-22">22</a></span>
+<span class="normal"><a href="#__codelineno-12-23">23</a></span>
+<span class="normal"><a href="#__codelineno-12-24">24</a></span>
+<span class="normal"><a href="#__codelineno-12-25">25</a></span>
+<span class="normal"><a href="#__codelineno-12-26">26</a></span>
+<span class="normal"><a href="#__codelineno-12-27">27</a></span>
+<span class="normal"><a href="#__codelineno-12-28">28</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="k">using</span><span class="w"> </span><span class="nn">Microsoft.AspNetCore.Mvc</span><span class="p">;</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2"></a>
+<a id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="k">namespace</span><span class="w"> </span><span class="nn">Exemple22.Controllers</span><span class="p">;</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4"></a>
+<a id="__codelineno-12-5" name="__codelineno-12-5"></a><span class="k">public</span><span class="w"> </span><span class="k">record</span><span class="w"> </span><span class="nf">Produit</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">Nom</span><span class="p">,</span><span class="w"> </span><span class="kt">decimal</span><span class="w"> </span><span class="n">Prix</span><span class="p">);</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6"></a>
+<a id="__codelineno-12-7" name="__codelineno-12-7"></a><span class="k">public</span><span class="w"> </span><span class="k">record</span><span class="w"> </span><span class="nf">AccueilModele</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">Nom</span><span class="p">,</span><span class="w"> </span><span class="n">DateOnly</span><span class="w"> </span><span class="n">Aujourdhui</span><span class="p">);</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8"></a>
+<a id="__codelineno-12-9" name="__codelineno-12-9"></a><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">PagesController</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Controller</span>
+<a id="__codelineno-12-10" name="__codelineno-12-10"></a><span class="p">{</span>
+<a id="__codelineno-12-11" name="__codelineno-12-11"></a><span class="w">    </span><span class="na">[HttpGet("/")]</span>
+<a id="__codelineno-12-12" name="__codelineno-12-12"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">IActionResult</span><span class="w"> </span><span class="nf">Accueil</span><span class="p">()</span>
+<a id="__codelineno-12-13" name="__codelineno-12-13"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-12-14" name="__codelineno-12-14"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nf">View</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">AccueilModele</span><span class="p">(</span><span class="s">"Marie"</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">DateOnly</span><span class="p">(</span><span class="mi">2026</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">23</span><span class="p">)));</span>
+<a id="__codelineno-12-15" name="__codelineno-12-15"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-12-16" name="__codelineno-12-16"></a>
+<a id="__codelineno-12-17" name="__codelineno-12-17"></a><span class="w">    </span><span class="na">[HttpGet("produits")]</span>
+<a id="__codelineno-12-18" name="__codelineno-12-18"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">IActionResult</span><span class="w"> </span><span class="nf">Produits</span><span class="p">()</span>
+<a id="__codelineno-12-19" name="__codelineno-12-19"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-12-20" name="__codelineno-12-20"></a><span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Produit</span><span class="o">&gt;</span><span class="w"> </span><span class="n">produits</span><span class="w"> </span><span class="o">=</span>
+<a id="__codelineno-12-21" name="__codelineno-12-21"></a><span class="w">        </span><span class="na">[</span>
+<a id="__codelineno-12-22" name="__codelineno-12-22"></a><span class="na">            new Produit("Clavier", 25m),</span>
+<a id="__codelineno-12-23" name="__codelineno-12-23"></a><span class="na">            new Produit("Souris", 12.5m),</span>
+<a id="__codelineno-12-24" name="__codelineno-12-24"></a><span class="na">            new Produit("Écran", 1149m),</span>
+<a id="__codelineno-12-25" name="__codelineno-12-25"></a><span class="na">        ]</span><span class="p">;</span>
+<a id="__codelineno-12-26" name="__codelineno-12-26"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nf">View</span><span class="p">(</span><span class="n">produits</span><span class="p">);</span>
+<a id="__codelineno-12-27" name="__codelineno-12-27"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-12-28" name="__codelineno-12-28"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Les actions ne savent rien de la langue : elles fournissent des données, les vues les traduisent et les formatent.</p>
+<h3 id="516-execution">5.1.6. <span style="color: #1f4d78">Exécution</span></h3>
+<p>En français (pas encore de cookie), aux URL <a href="http://localhost:5000/">http://localhost:5000/</a> et <a href="http://localhost:5000/produits">http://localhost:5000/produits</a> :</p>
+<p><img src="images/10000000000002BE00000110CDD5B3A3.png" width="428" height="166" style="width:11.322cm;height:4.387cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002BE00000110CDD5B3A3.png" /></p>
+<p><img src="images/10000000000002BE0000017CB22D8745.png" width="428" height="232" style="width:11.322cm;height:6.13cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002BE0000017CB22D8745.png" /></p>
+<p>Un clic sur EN, simulé avec <em>[curl]</em> (l&#x27;option <strong><em>[-H]</em></strong> ajoute l&#x27;entête <strong><em>[Referer]</em></strong> qu&#x27;aurait envoyé le navigateur) :</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a>curl -i -H "Referer: http://localhost:5000/produits" http://localhost:5000/langue/en
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span>
+<span class="normal"><a href="#__codelineno-14-2">2</a></span>
+<span class="normal"><a href="#__codelineno-14-3">3</a></span>
+<span class="normal"><a href="#__codelineno-14-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a>HTTP/1.1 302 Found
+<a id="__codelineno-14-2" name="__codelineno-14-2"></a>Content-Length: 0
+<a id="__codelineno-14-3" name="__codelineno-14-3"></a>Location: /produits
+<a id="__codelineno-14-4" name="__codelineno-14-4"></a>Set-Cookie: .AspNetCore.Culture=c%3Den%7Cuic%3Den; max-age=31536000; path=/; samesite=lax; httponly
+</code></pre></div></td></tr></table></div>
+<p>Le serveur dépose le cookie <strong><em>[.AspNetCore.Culture]</em></strong>, dont la valeur codée est <strong><em>[c=en|uic=en]</em></strong> (la culture et la culture de l&#x27;interface), et renvoie à la page d&#x27;origine, désormais en anglais :</p>
+<p><img src="images/10000000000002BE0000017C10A73892.png" width="428" height="232" style="width:11.322cm;height:6.13cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002BE0000017C10A73892.png" /></p>
+<p><img src="images/10000000000002BE00000110993F35A0.png" width="428" height="166" style="width:11.322cm;height:4.387cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002BE00000110993F35A0.png" /></p>
+<p>Une langue non gérée :</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a>curl -i http://localhost:5000/langue/de
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1">1</a></span>
+<span class="normal"><a href="#__codelineno-16-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a>HTTP/1.1 404 Not Found
+<a id="__codelineno-16-2" name="__codelineno-16-2"></a>Content-Length: 0
+</code></pre></div></td></tr></table></div>
+<p>L&#x27;étude de cas procède exactement ainsi, avec des dictionnaires plus fournis (<strong><em>[i18n/fr.json]</em></strong> et <strong><em>[i18n/en.json]</em></strong>) : même service <strong><em>[Traducteur]</em></strong>, même classe mère des vues (avec quelques propriétés de plus), même contrôleur <strong><em>[/langue/{langue}]</em></strong>, même cookie. Une seule différence : les messages d&#x27;erreur produits par les couches métier et web sont eux aussi des clés, traduites au dernier moment par la vue.</p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://stahe.github.io" target="_blank">
+          https://stahe.github.io
+        </a>
+        <br>
+        Ce tutoriel, rédigé par l’IA d’Anthropic <strong>Claude</strong> à la demande de <strong>Serge Tahé</strong>, est mis à la disposition du public selon les termes de la
+        <em>licence Creative Commons Attribution – Pas d’utilisation commerciale –
+        ShareAlike 3.0 Unported</em>.
+
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>
