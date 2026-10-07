@@ -748,17 +748,17 @@
 <span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
 <span class="normal"><a href="#__codelineno-0-10">10</a></span>
 <span class="normal"><a href="#__codelineno-0-11">11</a></span>
-<span class="normal"><a href="#__codelineno-0-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nx">namespace</span><span class="w"> </span><span class="nx">Exemple23</span><span class="p">.</span><span class="nx">Services</span><span class="p">;</span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">namespace</span><span class="w"> </span><span class="nn">Exemple23.Services</span><span class="p">;</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2"></a>
 <a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="c1">// portée APPLICATION (AddSingleton) : une seule instance, partagée par</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="c1">// TOUTES les requêtes de TOUS les utilisateurs</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="k">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">CompteurService</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">CompteurService</span>
 <a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="p">{</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="kr">int</span><span class="w"> </span><span class="nx">total</span><span class="p">;</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">total</span><span class="p">;</span>
 <a id="__codelineno-0-8" name="__codelineno-0-8"></a>
 <a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">    </span><span class="c1">// plusieurs requêtes peuvent s'exécuter EN MÊME TEMPS : Interlocked</span>
 <a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w">    </span><span class="c1">// garantit que deux incrémentations simultanées ne se perdent pas</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kr">int</span><span class="w"> </span><span class="nx">Incrementer</span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">Interlocked</span><span class="p">.</span><span class="nx">Increment</span><span class="p">(</span><span class="nx">ref</span><span class="w"> </span><span class="nx">total</span><span class="p">);</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">Incrementer</span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">Interlocked</span><span class="p">.</span><span class="n">Increment</span><span class="p">(</span><span class="k">ref</span><span class="w"> </span><span class="n">total</span><span class="p">);</span>
 <a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <ul>
@@ -775,15 +775,15 @@
 <span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
 <span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
 <span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-1-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nx">namespace</span><span class="w"> </span><span class="nx">Exemple23</span><span class="p">.</span><span class="nx">Services</span><span class="p">;</span>
+<span class="normal"><a href="#__codelineno-1-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="k">namespace</span><span class="w"> </span><span class="nn">Exemple23.Services</span><span class="p">;</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2"></a>
 <a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="c1">// portée REQUÊTE (AddScoped) : une NOUVELLE instance pour chaque requête HTTP,</span>
 <a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="c1">// partagée par tous ceux qui la demandent PENDANT cette requête</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="k">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">RequeteService</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">RequeteService</span>
 <a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="p">{</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kr">int</span><span class="w"> </span><span class="nx">instancesCreees</span><span class="p">;</span><span class="w"> </span><span class="c1">// static : un compteur commun à toutes les instances</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">instancesCreees</span><span class="p">;</span><span class="w"> </span><span class="c1">// static : un compteur commun à toutes les instances</span>
 <a id="__codelineno-1-8" name="__codelineno-1-8"></a>
-<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kr">int</span><span class="w"> </span><span class="nx">Numero</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">get</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Interlocked</span><span class="p">.</span><span class="nx">Increment</span><span class="p">(</span><span class="nx">ref</span><span class="w"> </span><span class="nx">instancesCreees</span><span class="p">);</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">Numero</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Interlocked</span><span class="p">.</span><span class="n">Increment</span><span class="p">(</span><span class="k">ref</span><span class="w"> </span><span class="n">instancesCreees</span><span class="p">);</span>
 <a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <ul>
@@ -800,15 +800,15 @@
 <span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
 <span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
 <span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-2-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="nx">namespace</span><span class="w"> </span><span class="nx">Exemple23</span><span class="p">.</span><span class="nx">Services</span><span class="p">;</span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="k">namespace</span><span class="w"> </span><span class="nn">Exemple23.Services</span><span class="p">;</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2"></a>
 <a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="c1">// portée TRANSIENT (AddTransient) : une NOUVELLE instance à CHAQUE injection,</span>
 <a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="c1">// même au cours d'une seule requête</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="k">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">OutilService</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">OutilService</span>
 <a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="p">{</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kr">int</span><span class="w"> </span><span class="nx">instancesCreees</span><span class="p">;</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">instancesCreees</span><span class="p">;</span>
 <a id="__codelineno-2-8" name="__codelineno-2-8"></a>
-<a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kr">int</span><span class="w"> </span><span class="nx">Numero</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">get</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Interlocked</span><span class="p">.</span><span class="nx">Increment</span><span class="p">(</span><span class="nx">ref</span><span class="w"> </span><span class="nx">instancesCreees</span><span class="p">);</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">Numero</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Interlocked</span><span class="p">.</span><span class="n">Increment</span><span class="p">(</span><span class="k">ref</span><span class="w"> </span><span class="n">instancesCreees</span><span class="p">);</span>
 <a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <p>Le même compteur d&#x27;instances, pour un service <strong><em>[transient]</em></strong>.</p>
@@ -842,36 +842,36 @@
 <span class="normal"><a href="#__codelineno-3-27">27</a></span>
 <span class="normal"><a href="#__codelineno-3-28">28</a></span>
 <span class="normal"><a href="#__codelineno-3-29">29</a></span>
-<span class="normal"><a href="#__codelineno-3-30">30</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="nx">using</span><span class="w"> </span><span class="nx">System</span><span class="p">.</span><span class="nx">Text</span><span class="p">.</span><span class="nx">Encodings</span><span class="p">.</span><span class="nx">Web</span><span class="p">;</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="nx">using</span><span class="w"> </span><span class="nx">System</span><span class="p">.</span><span class="nx">Text</span><span class="p">.</span><span class="nx">Unicode</span><span class="p">;</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="nx">using</span><span class="w"> </span><span class="nx">Exemple23</span><span class="p">.</span><span class="nx">Services</span><span class="p">;</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="nx">using</span><span class="w"> </span><span class="nx">Microsoft</span><span class="p">.</span><span class="nx">Extensions</span><span class="p">.</span><span class="nx">FileProviders</span><span class="p">;</span>
+<span class="normal"><a href="#__codelineno-3-30">30</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="k">using</span><span class="w"> </span><span class="nn">System.Text.Encodings.Web</span><span class="p">;</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="k">using</span><span class="w"> </span><span class="nn">System.Text.Unicode</span><span class="p">;</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="k">using</span><span class="w"> </span><span class="nn">Exemple23.Services</span><span class="p">;</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="k">using</span><span class="w"> </span><span class="nn">Microsoft.Extensions.FileProviders</span><span class="p">;</span>
 <a id="__codelineno-3-5" name="__codelineno-3-5"></a>
-<a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="kd">var</span><span class="w"> </span><span class="nx">builder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">WebApplication</span><span class="p">.</span><span class="nx">CreateBuilder</span><span class="p">(</span><span class="nx">args</span><span class="p">);</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="nx">builder</span><span class="p">.</span><span class="nx">Services</span><span class="p">.</span><span class="nx">AddControllersWithViews</span><span class="p">();</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="nx">builder</span><span class="p">.</span><span class="nx">Services</span><span class="p">.</span><span class="nx">AddSingleton</span><span class="p">(</span><span class="nx">HtmlEncoder</span><span class="p">.</span><span class="nx">Create</span><span class="p">(</span><span class="nx">UnicodeRanges</span><span class="p">.</span><span class="nx">All</span><span class="p">));</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="kt">var</span><span class="w"> </span><span class="n">builder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">WebApplication</span><span class="p">.</span><span class="n">CreateBuilder</span><span class="p">(</span><span class="n">args</span><span class="p">);</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddControllersWithViews</span><span class="p">();</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddSingleton</span><span class="p">(</span><span class="n">HtmlEncoder</span><span class="p">.</span><span class="n">Create</span><span class="p">(</span><span class="n">UnicodeRanges</span><span class="p">.</span><span class="n">All</span><span class="p">));</span>
 <a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="c1">// les trois durées de vie d'un service</span>
-<a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="nx">builder</span><span class="p">.</span><span class="nx">Services</span><span class="p">.</span><span class="nx">AddSingleton</span><span class="o">&lt;</span><span class="nx">CompteurService</span><span class="o">&gt;</span><span class="p">();</span><span class="w"> </span><span class="c1">// une instance pour toute l'application</span>
-<a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="nx">builder</span><span class="p">.</span><span class="nx">Services</span><span class="p">.</span><span class="nx">AddScoped</span><span class="o">&lt;</span><span class="nx">RequeteService</span><span class="o">&gt;</span><span class="p">();</span><span class="w">     </span><span class="c1">// une instance par requête</span>
-<a id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="nx">builder</span><span class="p">.</span><span class="nx">Services</span><span class="p">.</span><span class="nx">AddTransient</span><span class="o">&lt;</span><span class="nx">OutilService</span><span class="o">&gt;</span><span class="p">();</span><span class="w">    </span><span class="c1">// une instance par injection</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddSingleton</span><span class="o">&lt;</span><span class="n">CompteurService</span><span class="o">&gt;</span><span class="p">();</span><span class="w"> </span><span class="c1">// une instance pour toute l'application</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddScoped</span><span class="o">&lt;</span><span class="n">RequeteService</span><span class="o">&gt;</span><span class="p">();</span><span class="w">     </span><span class="c1">// une instance par requête</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddTransient</span><span class="o">&lt;</span><span class="n">OutilService</span><span class="o">&gt;</span><span class="p">();</span><span class="w">    </span><span class="c1">// une instance par injection</span>
 <a id="__codelineno-3-13" name="__codelineno-3-13"></a>
-<a id="__codelineno-3-14" name="__codelineno-3-14"></a><span class="kd">var</span><span class="w"> </span><span class="nx">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">builder</span><span class="p">.</span><span class="nx">Build</span><span class="p">();</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14"></a><span class="kt">var</span><span class="w"> </span><span class="n">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">Build</span><span class="p">();</span>
 <a id="__codelineno-3-15" name="__codelineno-3-15"></a>
-<a id="__codelineno-3-16" name="__codelineno-3-16"></a><span class="nx">app</span><span class="p">.</span><span class="nx">UseStaticFiles</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nx">StaticFileOptions</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16"></a><span class="n">app</span><span class="p">.</span><span class="n">UseStaticFiles</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">StaticFileOptions</span>
 <a id="__codelineno-3-17" name="__codelineno-3-17"></a><span class="p">{</span>
-<a id="__codelineno-3-18" name="__codelineno-3-18"></a><span class="w">    </span><span class="nx">FileProvider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">PhysicalFileProvider</span><span class="p">(</span><span class="nx">Path</span><span class="p">.</span><span class="nx">GetFullPath</span><span class="p">(</span><span class="nx">Path</span><span class="p">.</span><span class="nx">Combine</span><span class="p">(</span><span class="nx">builder</span><span class="p">.</span><span class="nx">Environment</span><span class="p">.</span><span class="nx">ContentRootPath</span><span class="p">,</span><span class="w"> </span><span class="s2">".."</span><span class="p">,</span><span class="w"> </span><span class="s2">"commun"</span><span class="p">,</span><span class="w"> </span><span class="s2">"bootstrap"</span><span class="p">))),</span>
-<a id="__codelineno-3-19" name="__codelineno-3-19"></a><span class="w">    </span><span class="nx">RequestPath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"/bootstrap"</span><span class="p">,</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18"></a><span class="w">    </span><span class="n">FileProvider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PhysicalFileProvider</span><span class="p">(</span><span class="n">Path</span><span class="p">.</span><span class="n">GetFullPath</span><span class="p">(</span><span class="n">Path</span><span class="p">.</span><span class="n">Combine</span><span class="p">(</span><span class="n">builder</span><span class="p">.</span><span class="n">Environment</span><span class="p">.</span><span class="n">ContentRootPath</span><span class="p">,</span><span class="w"> </span><span class="s">".."</span><span class="p">,</span><span class="w"> </span><span class="s">"commun"</span><span class="p">,</span><span class="w"> </span><span class="s">"bootstrap"</span><span class="p">))),</span>
+<a id="__codelineno-3-19" name="__codelineno-3-19"></a><span class="w">    </span><span class="n">RequestPath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"/bootstrap"</span><span class="p">,</span>
 <a id="__codelineno-3-20" name="__codelineno-3-20"></a><span class="p">});</span>
 <a id="__codelineno-3-21" name="__codelineno-3-21"></a>
 <a id="__codelineno-3-22" name="__codelineno-3-22"></a><span class="c1">// portée REQUÊTE : HttpContext.Items naît et meurt avec la requête</span>
-<a id="__codelineno-3-23" name="__codelineno-3-23"></a><span class="nx">app</span><span class="p">.</span><span class="nx">Use</span><span class="p">(</span><span class="k">async</span><span class="w"> </span><span class="p">(</span><span class="nx">contexte</span><span class="p">,</span><span class="w"> </span><span class="nx">suite</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span>
+<a id="__codelineno-3-23" name="__codelineno-3-23"></a><span class="n">app</span><span class="p">.</span><span class="n">Use</span><span class="p">(</span><span class="k">async</span><span class="w"> </span><span class="p">(</span><span class="n">contexte</span><span class="p">,</span><span class="w"> </span><span class="n">suite</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span>
 <a id="__codelineno-3-24" name="__codelineno-3-24"></a><span class="p">{</span>
-<a id="__codelineno-3-25" name="__codelineno-3-25"></a><span class="w">    </span><span class="nx">contexte</span><span class="p">.</span><span class="nx">Items</span><span class="p">[</span><span class="s2">"debut"</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">DateTime</span><span class="p">.</span><span class="nx">Now</span><span class="p">.</span><span class="nx">ToString</span><span class="p">(</span><span class="s2">"HH:mm:ss.fff"</span><span class="p">);</span>
-<a id="__codelineno-3-26" name="__codelineno-3-26"></a><span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">suite</span><span class="p">(</span><span class="nx">contexte</span><span class="p">);</span>
+<a id="__codelineno-3-25" name="__codelineno-3-25"></a><span class="w">    </span><span class="n">contexte</span><span class="p">.</span><span class="n">Items</span><span class="p">[</span><span class="s">"debut"</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DateTime</span><span class="p">.</span><span class="n">Now</span><span class="p">.</span><span class="n">ToString</span><span class="p">(</span><span class="s">"HH:mm:ss.fff"</span><span class="p">);</span>
+<a id="__codelineno-3-26" name="__codelineno-3-26"></a><span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nf">suite</span><span class="p">(</span><span class="n">contexte</span><span class="p">);</span>
 <a id="__codelineno-3-27" name="__codelineno-3-27"></a><span class="p">});</span>
 <a id="__codelineno-3-28" name="__codelineno-3-28"></a>
-<a id="__codelineno-3-29" name="__codelineno-3-29"></a><span class="nx">app</span><span class="p">.</span><span class="nx">MapControllers</span><span class="p">();</span>
-<a id="__codelineno-3-30" name="__codelineno-3-30"></a><span class="nx">app</span><span class="p">.</span><span class="nx">Run</span><span class="p">();</span>
+<a id="__codelineno-3-29" name="__codelineno-3-29"></a><span class="n">app</span><span class="p">.</span><span class="n">MapControllers</span><span class="p">();</span>
+<a id="__codelineno-3-30" name="__codelineno-3-30"></a><span class="n">app</span><span class="p">.</span><span class="n">Run</span><span class="p">();</span>
 </code></pre></div></td></tr></table></div>
 <ul>
 <li>lignes 10-12 : les trois durées de vie ;</li>
@@ -941,14 +941,14 @@
 <a id="__codelineno-5-2" name="__codelineno-5-2"></a>@* @inject : la vue demande elle aussi les services, au cours de la MÊME requête *@
 <a id="__codelineno-5-3" name="__codelineno-5-3"></a>@inject RequeteService RequeteDeLaVue
 <a id="__codelineno-5-4" name="__codelineno-5-4"></a>@inject OutilService OutilDeLaVue
-<a id="__codelineno-5-5" name="__codelineno-5-5"></a>&lt;h1 class="h3"&gt;Les portées des données&lt;/h1&gt;
-<a id="__codelineno-5-6" name="__codelineno-5-6"></a>&lt;ul&gt;
-<a id="__codelineno-5-7" name="__codelineno-5-7"></a>  &lt;li&gt;application : @Model.Total visite(s) du site, tous navigateurs confondus&lt;/li&gt;
-<a id="__codelineno-5-8" name="__codelineno-5-8"></a>  &lt;li&gt;requête : instance n° @Model.Instance de RequeteService (n° @RequeteDeLaVue.Numero dans la vue),
-<a id="__codelineno-5-9" name="__codelineno-5-9"></a>    requête reçue à @Context.Items["debut"]&lt;/li&gt;
-<a id="__codelineno-5-10" name="__codelineno-5-10"></a>  &lt;li&gt;transient : instance n° @Model.Outil de OutilService (n° @OutilDeLaVue.Numero dans la vue)&lt;/li&gt;
-<a id="__codelineno-5-11" name="__codelineno-5-11"></a>  &lt;li&gt;client : @Model.MesVisites visite(s) de ce navigateur&lt;/li&gt;
-<a id="__codelineno-5-12" name="__codelineno-5-12"></a>&lt;/ul&gt;
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="p">&lt;</span><span class="nt">h1</span> <span class="na">class</span><span class="o">=</span><span class="s">"h3"</span><span class="p">&gt;</span>Les portées des données<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7"></a>  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>application : @Model.Total visite(s) du site, tous navigateurs confondus<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8"></a>  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>requête : instance n° @Model.Instance de RequeteService (n° @RequeteDeLaVue.Numero dans la vue),
+<a id="__codelineno-5-9" name="__codelineno-5-9"></a>    requête reçue à @Context.Items["debut"]<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10"></a>  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>transient : instance n° @Model.Outil de OutilService (n° @OutilDeLaVue.Numero dans la vue)<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11"></a>  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>client : @Model.MesVisites visite(s) de ce navigateur<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12"></a><span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 <ul>
 <li>lignes 3-4 : la directive <strong><em>[@inject Type Nom]</em></strong> demande un service à l&#x27;injection de dépendances, et le range dans une propriété de la vue. La vue est exécutée au cours de la même requête que l&#x27;action : on va pouvoir comparer les instances reçues par le contrôleur et par la vue ;</li>
@@ -1049,27 +1049,27 @@
 <a id="__codelineno-9-2" name="__codelineno-9-2"></a>Content-Type: text/html; charset=utf-8
 <a id="__codelineno-9-3" name="__codelineno-9-3"></a>Set-Cookie: mesVisites=42; path=/; samesite=lax; httponly
 <a id="__codelineno-9-4" name="__codelineno-9-4"></a>
-<a id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="cp">&lt;!doctype html&gt;</span>
-<a id="__codelineno-9-6" name="__codelineno-9-6"></a><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">"fr"</span><span class="p">&gt;</span>
-<a id="__codelineno-9-7" name="__codelineno-9-7"></a><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-<a id="__codelineno-9-8" name="__codelineno-9-8"></a>  <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">"utf-8"</span><span class="p">&gt;</span>
-<a id="__codelineno-9-9" name="__codelineno-9-9"></a>  <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Portées<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
-<a id="__codelineno-9-10" name="__codelineno-9-10"></a>  <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">"stylesheet"</span> <span class="na">href</span><span class="o">=</span><span class="s">"/bootstrap/css/bootstrap.min.css"</span><span class="p">&gt;</span>
-<a id="__codelineno-9-11" name="__codelineno-9-11"></a><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-<a id="__codelineno-9-12" name="__codelineno-9-12"></a><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-<a id="__codelineno-9-13" name="__codelineno-9-13"></a>  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"container py-3"</span><span class="p">&gt;</span>
-<a id="__codelineno-9-14" name="__codelineno-9-14"></a>    <span class="p">&lt;</span><span class="nt">h1</span> <span class="na">class</span><span class="o">=</span><span class="s">"h3"</span><span class="p">&gt;</span>Les portées des données<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-<a id="__codelineno-9-15" name="__codelineno-9-15"></a><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
-<a id="__codelineno-9-16" name="__codelineno-9-16"></a>  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>application : 6 visite(s) du site, tous navigateurs confondus<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-<a id="__codelineno-9-17" name="__codelineno-9-17"></a>  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>requête : instance n° 6 de RequeteService (n° 6 dans la vue),
-<a id="__codelineno-9-18" name="__codelineno-9-18"></a>    requête reçue à 12:19:47.374<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-<a id="__codelineno-9-19" name="__codelineno-9-19"></a>  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>transient : instance n° 11 de OutilService (n° 12 dans la vue)<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-<a id="__codelineno-9-20" name="__codelineno-9-20"></a>  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>client : 42 visite(s) de ce navigateur<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-<a id="__codelineno-9-21" name="__codelineno-9-21"></a><span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5"></a>&lt;!doctype html&gt;
+<a id="__codelineno-9-6" name="__codelineno-9-6"></a>&lt;html lang="fr"&gt;
+<a id="__codelineno-9-7" name="__codelineno-9-7"></a>&lt;head&gt;
+<a id="__codelineno-9-8" name="__codelineno-9-8"></a>  &lt;meta charset="utf-8"&gt;
+<a id="__codelineno-9-9" name="__codelineno-9-9"></a>  &lt;title&gt;Portées&lt;/title&gt;
+<a id="__codelineno-9-10" name="__codelineno-9-10"></a>  &lt;link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css"&gt;
+<a id="__codelineno-9-11" name="__codelineno-9-11"></a>&lt;/head&gt;
+<a id="__codelineno-9-12" name="__codelineno-9-12"></a>&lt;body&gt;
+<a id="__codelineno-9-13" name="__codelineno-9-13"></a>  &lt;div class="container py-3"&gt;
+<a id="__codelineno-9-14" name="__codelineno-9-14"></a>    &lt;h1 class="h3"&gt;Les portées des données&lt;/h1&gt;
+<a id="__codelineno-9-15" name="__codelineno-9-15"></a>&lt;ul&gt;
+<a id="__codelineno-9-16" name="__codelineno-9-16"></a>  &lt;li&gt;application : 6 visite(s) du site, tous navigateurs confondus&lt;/li&gt;
+<a id="__codelineno-9-17" name="__codelineno-9-17"></a>  &lt;li&gt;requête : instance n° 6 de RequeteService (n° 6 dans la vue),
+<a id="__codelineno-9-18" name="__codelineno-9-18"></a>    requête reçue à 12:19:47.374&lt;/li&gt;
+<a id="__codelineno-9-19" name="__codelineno-9-19"></a>  &lt;li&gt;transient : instance n° 11 de OutilService (n° 12 dans la vue)&lt;/li&gt;
+<a id="__codelineno-9-20" name="__codelineno-9-20"></a>  &lt;li&gt;client : 42 visite(s) de ce navigateur&lt;/li&gt;
+<a id="__codelineno-9-21" name="__codelineno-9-21"></a>&lt;/ul&gt;
 <a id="__codelineno-9-22" name="__codelineno-9-22"></a>
-<a id="__codelineno-9-23" name="__codelineno-9-23"></a>  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<a id="__codelineno-9-24" name="__codelineno-9-24"></a><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-<a id="__codelineno-9-25" name="__codelineno-9-25"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+<a id="__codelineno-9-23" name="__codelineno-9-23"></a>  &lt;/div&gt;
+<a id="__codelineno-9-24" name="__codelineno-9-24"></a>&lt;/body&gt;
+<a id="__codelineno-9-25" name="__codelineno-9-25"></a>&lt;/html&gt;
 </code></pre></div></td></tr></table></div>
 <p>Pour un compteur de visites, c&#x27;est sans importance. Pour une donnée sensible (l&#x27;identité de l&#x27;utilisateur, son rôle), le serveur doit pouvoir détecter une falsification : le chapitre 8 montre comment.</p>
 <p>Une règle découle de ces durées de vie : un service ne doit pas dépendre d&#x27;un service de durée de vie plus courte. Un singleton qui recevrait un service <strong><em>[Scoped]</em></strong> le garderait pour toujours, bien au-delà de la requête pour laquelle il a été créé. <em>[ASP.NET Core]</em> vérifie cette règle au démarrage, en mode développement, et refuse de démarrer si elle est violée. Dans l&#x27;étude de cas :</p>
